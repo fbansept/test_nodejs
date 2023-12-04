@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  bdd:
+    image: mysql:8.2.0
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      - data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: unless-stopped
+    environment:
+      - PMA_HOST=bdd
+    ports:
+      - 8080:80
+
+  app:
+    build: .
+    ports:
+      - 3000:3000
+
+volumes:
+  data:

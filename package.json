@@ -1,0 +1,15 @@
+{
+    "name": "express-mysql-app",
+    "version": "1.0.0",
+    "description": "Une application simple Express.js interagissant avec une base de données MySQL",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "author": "Votre Nom",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.18.2",
+        "mysql2": "^3.6.5"
+    }
+}
